@@ -2,7 +2,6 @@
 *.dmg
 *.gz
 *.iso
-*.jar
 *.rar
 *.tar
 *.zip
@@ -10,10 +9,11 @@
 *.ear
 *.sar
 *.class
+*.u5
+*.u6
 nbproject/private/
 build/
 nbbuild/
-dist/
 nbdist/
 nbactions.xml
 nb-configuration.xml
