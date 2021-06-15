@@ -1,6 +1,7 @@
 
 import busqueda_binaria.BusquedaBinaria;
 import busqueda_binaria.MetodosInternos;
+import busqueda_secuencia.BusquedaSecuencial;
 import busqueda_hash.Hash;
 import javax.swing.JOptionPane;
 
@@ -19,6 +20,7 @@ public class Ventana extends javax.swing.JFrame {
     Hash objHash;
     int arreglo[];
     busqueda_binaria.BusquedaBinaria binaria;
+    busqueda_secuencia.BusquedaSecuencial secuencial;
 
     /**
      * Creates new form Ventana
@@ -29,6 +31,8 @@ public class Ventana extends javax.swing.JFrame {
         btnBinaria.setEnabled(false);
         btnSecuencial.setEnabled(false);
         btnHash.setEnabled(false);
+        setLocationRelativeTo(null);
+        setTitle("EDD U6 - ALGORITMOS DE BUSQUEDA");
 
         n = Integer.parseInt(javax.swing.JOptionPane.showInputDialog(this, "Ingrese el tamaño de N "));
     }
@@ -163,7 +167,14 @@ public class Ventana extends javax.swing.JFrame {
     }//GEN-LAST:event_btnBinariaActionPerformed
 
     private void btnSecuencialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSecuencialActionPerformed
-        // TODO add your handling code here:
+        secuencial = new BusquedaSecuencial(arreglo);
+        int res = secuencial.busqueda(Integer.parseInt(txtDato.getText().trim()));
+        if (res == -1) {
+            javax.swing.JOptionPane.showMessageDialog(this, "VALOR NO ENCONTRADO");
+            return;
+        }
+        
+        JOptionPane.showMessageDialog(this, "VALOR ENCONTRADO EN LA POSICION " + res);
     }//GEN-LAST:event_btnSecuencialActionPerformed
 
 
