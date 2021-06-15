@@ -39,6 +39,12 @@ public class ListaDatos {
         }
     }
 
+    /**
+     * Se encarga de buscar el dato entre los hijos de su lista
+     *
+     * @param valor valor a buscar
+     * @return indice donde se encuentra el valor
+     */
     public int buscar(int valor) {
         if (ini == null) {
             return -1;

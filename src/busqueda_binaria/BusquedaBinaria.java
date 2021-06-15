@@ -16,10 +16,30 @@ public class BusquedaBinaria {
         this.datos = datos;
     }
 
-    public int busqueda(int valor){
+    /**
+     * Funcion encargada de hacer una busqueda binaria (similar a recorrer un
+     * arbol binario en busca de algun valor) entre los datos facilitados
+     *
+     * @param valor valor buscado
+     * @return indice del arreglo donde se encuentra el valor
+     */
+    public int busqueda(int valor) {
         datos = new MetodosInternos(datos).Quicksort();
         return busqueda(datos, 0, datos.length - 1, valor);
     }
+
+    /**
+     * Busca comparando el dato del centro, si este es mayor que el numero
+     * buscado procede a olvidar la parte izquierda eliminando la mitad del
+     * vector, mientras que si es menor elimina el lado derecho
+     *
+     * @param datos arreglo de datos donde se va a buscar
+     * @param min inicio del subarreglo donde se va a buscar el dato
+     * @param max fin del subarreglo donde se va a buscar el dato
+     * @param buscado valor que se quiere encontrar
+     * @return indice de la posicion del arreglo donde se puede encontrar el
+     * dato
+     */
     private int busqueda(int[] datos, int min, int max, int buscado) {
         if (min > max) {
             return -1;

@@ -17,6 +17,13 @@ public class Hash {
         tablaHash = new Tabla(a);
     }
 
+    /**
+     * Busca un determinado valor en la lista de valores guardados en la tabla
+     * de hash
+     *
+     * @param valor valor a buscar
+     * @return indice del valor en el arreglo
+     */
     public int hashBuscar(int valor) {
         return tablaHash.buscar(valor);
     }

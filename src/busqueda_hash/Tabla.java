@@ -23,6 +23,10 @@ public class Tabla {
         crearTabla(datos);
     }
 
+    /**
+     * Funcion encargada de dimensionar la tabla de hash con algun numero primo
+     * usando el algoritmo de Criba de Eratóstenes
+     */
     private void dimensionarTabla() {
         int tope = (int) Math.floor(Math.sqrt(tam)) + 1;
 
@@ -45,6 +49,10 @@ public class Tabla {
         }
     }
 
+    /**
+     * Se encarga de darles una posicion en la tabla de hash a los datos proporcionados
+     * @param datos arreglo de datos que van a ser mapeados
+     */
     private void crearTabla(int[] datos) {
         int x = 0;
         for (int i : datos) {
