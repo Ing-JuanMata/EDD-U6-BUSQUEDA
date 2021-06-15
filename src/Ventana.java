@@ -1,5 +1,8 @@
 
+import busqueda_binaria.BusquedaBinaria;
+import busqueda_binaria.MetodosInternos;
 import busqueda_hash.Hash;
+import javax.swing.JOptionPane;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -15,6 +18,7 @@ public class Ventana extends javax.swing.JFrame {
     int n;
     Hash objHash;
     int arreglo[];
+    busqueda_binaria.BusquedaBinaria binaria;
 
     /**
      * Creates new form Ventana
@@ -49,6 +53,10 @@ public class Ventana extends javax.swing.JFrame {
         jTextArea1 = new javax.swing.JTextArea();
         jLabel4 = new javax.swing.JLabel();
         btnGenerar = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
+        txtMin = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        txtMax = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -58,8 +66,8 @@ public class Ventana extends javax.swing.JFrame {
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 0, -1, -1));
 
         jLabel2.setText("Dato a buscar:");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 210, -1, -1));
-        getContentPane().add(txtDato, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 210, 60, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, -1, -1));
+        getContentPane().add(txtDato, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 210, 60, -1));
 
         btnBinaria.setText("Binaria");
         btnBinaria.addActionListener(new java.awt.event.ActionListener() {
@@ -103,7 +111,15 @@ public class Ventana extends javax.swing.JFrame {
                 btnGenerarActionPerformed(evt);
             }
         });
-        getContentPane().add(btnGenerar, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 170, -1, -1));
+        getContentPane().add(btnGenerar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, -1, -1));
+
+        jLabel5.setText("Minimo");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 210, -1, -1));
+        getContentPane().add(txtMin, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 210, 130, -1));
+
+        jLabel6.setText("Maximo");
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 170, -1, -1));
+        getContentPane().add(txtMax, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 170, 130, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -112,10 +128,21 @@ public class Ventana extends javax.swing.JFrame {
     private void btnGenerarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarActionPerformed
         arreglo = new int[n];
         String auxS = "";
-        for (int i = 0; i < n; i++) {
-            arreglo[i] = (int) (Math.random() * (9));
-            auxS += String.valueOf(arreglo[i]) + ",";
+        int min = Integer.parseInt(txtMin.getText().trim());
+        int max = Integer.parseInt(txtMax.getText().trim());
+        if (min > max) {
+            JOptionPane.showMessageDialog(this, "EL VALOR MINIMO DEBE SER MENOR AL MAXIMO");
+            return;
         }
+        for (int i = 0; i < n; i++) {
+            arreglo[i] = (int) (Math.random() * (max - min) + min);
+        }
+
+        arreglo = new MetodosInternos(arreglo).Quicksort();
+        for (int i : arreglo) {
+            auxS += String.valueOf(i) + ",";
+        }
+        auxS = auxS.substring(0, auxS.length() - 1);
         btnBinaria.setEnabled(true);
         btnSecuencial.setEnabled(true);
         btnHash.setEnabled(true);
@@ -125,7 +152,14 @@ public class Ventana extends javax.swing.JFrame {
     }//GEN-LAST:event_btnGenerarActionPerformed
 
     private void btnBinariaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBinariaActionPerformed
-        // TODO add your handling code here:
+        binaria = new BusquedaBinaria(arreglo);
+        int res = binaria.busqueda(Integer.parseInt(txtDato.getText().trim()));
+        if (res == -1) {
+            JOptionPane.showMessageDialog(this, "VALOR NO ENCONTRADO");
+            return;
+        }
+
+        JOptionPane.showMessageDialog(this, "VALOR ENCONTRADO EN LA POSICION " + res);
     }//GEN-LAST:event_btnBinariaActionPerformed
 
     private void btnSecuencialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSecuencialActionPerformed
@@ -145,7 +179,7 @@ public class Ventana extends javax.swing.JFrame {
         }
 
         if (arreglo[hashCode] == aux) {
-            javax.swing.JOptionPane.showMessageDialog(this, "Si existe");
+            javax.swing.JOptionPane.showMessageDialog(this, "ENCONTRADO EN LA POSICION " + hashCode);
         }
 
 
@@ -195,8 +229,12 @@ public class Ventana extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextField txtDato;
+    private javax.swing.JTextField txtMax;
+    private javax.swing.JTextField txtMin;
     // End of variables declaration//GEN-END:variables
 }

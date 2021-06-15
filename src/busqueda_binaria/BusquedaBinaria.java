@@ -10,17 +10,17 @@ import java.io.File;
 
 public class BusquedaBinaria {
 
-    String datos;
+    int[] datos;
 
-    public BusquedaBinaria(String datos) {
+    public BusquedaBinaria(int[] datos) {
         this.datos = datos;
     }
 
-    public BusquedaBinaria(File path) {
-        ManejoArchivo.copiarArchivo(path.getAbsolutePath(), "datos.u6");
+    public int busqueda(int valor){
+        datos = new MetodosInternos(datos).Quicksort();
+        return busqueda(datos, 0, datos.length - 1, valor);
     }
-
-    public int busqueda(int[] datos, int min, int max, int buscado) {
+    private int busqueda(int[] datos, int min, int max, int buscado) {
         if (min > max) {
             return -1;
         }
