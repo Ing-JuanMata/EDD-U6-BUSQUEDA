@@ -6,31 +6,29 @@ import busqueda_hash.Hash;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-    
 /**
  *
  * @author Jose
  */
 public class Ventana extends javax.swing.JFrame {
 
-     int n;
-     Hash objHash;
-    
+    int n;
+    Hash objHash;
+    int arreglo[];
+
     /**
      * Creates new form Ventana
      */
-
     public Ventana() {
         initComponents();
-        
-       btnBinaria.setEnabled(false);
-       btnSecuencial.setEnabled(false);
-       btnHash.setEnabled(false);
-       
-       n = Integer.parseInt(javax.swing.JOptionPane.showInputDialog (this, "Ingrese el tamaño de N "));
+
+        btnBinaria.setEnabled(false);
+        btnSecuencial.setEnabled(false);
+        btnHash.setEnabled(false);
+
+        n = Integer.parseInt(javax.swing.JOptionPane.showInputDialog(this, "Ingrese el tamaño de N "));
     }
-    
-    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -109,21 +107,21 @@ public class Ventana extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-    int arreglo[];
-    
+
+
     private void btnGenerarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarActionPerformed
-         arreglo = new int [n];
-         String auxS = "";
-         for (int i = 0; i < n; i++){
-             arreglo [i] = (int) (Math.random()*(9));
-             auxS += String.valueOf(arreglo[i])+",";
-         }
-         btnBinaria.setEnabled(true);
-         btnSecuencial.setEnabled(true);
-         btnHash.setEnabled(true);
-          jTextArea1.setText(auxS);
-         
-       
+        arreglo = new int[n];
+        String auxS = "";
+        for (int i = 0; i < n; i++) {
+            arreglo[i] = (int) (Math.random() * (9));
+            auxS += String.valueOf(arreglo[i]) + ",";
+        }
+        btnBinaria.setEnabled(true);
+        btnSecuencial.setEnabled(true);
+        btnHash.setEnabled(true);
+        jTextArea1.setText(auxS);
+
+
     }//GEN-LAST:event_btnGenerarActionPerformed
 
     private void btnBinariaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBinariaActionPerformed
@@ -133,24 +131,24 @@ public class Ventana extends javax.swing.JFrame {
     private void btnSecuencialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSecuencialActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnSecuencialActionPerformed
-    
-    
+
 
     private void btnHashActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHashActionPerformed
         int aux = Integer.parseInt(txtDato.getText());
         int hashCode;
-        objHash = new Hash(n,aux,arreglo);
-        hashCode = objHash.hashBuscar();
-        
-        if (arreglo[hashCode] == aux){
-            javax.swing.JOptionPane.showMessageDialog (this, "Si existe");
+        objHash = new Hash(arreglo);
+        hashCode = objHash.hashBuscar(aux);
+
+        if (hashCode == -1) {
+            javax.swing.JOptionPane.showMessageDialog(this, "No existe");
+            return;
         }
-        else{
-            javax.swing.JOptionPane.showMessageDialog (this, "No existe");
+
+        if (arreglo[hashCode] == aux) {
+            javax.swing.JOptionPane.showMessageDialog(this, "Si existe");
         }
-        
-        
-        
+
+
     }//GEN-LAST:event_btnHashActionPerformed
 
     /**

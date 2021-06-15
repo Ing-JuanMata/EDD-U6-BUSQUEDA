@@ -10,23 +10,15 @@ package busqueda_hash;
  * @author Osmar
  */
 public class Hash {
-    
-    int n,buscar,a[];
-    public Hash (int n, int buscar, int a[]){
-       this.n = n;
-       this.buscar = buscar;
-       this.a = a;
+
+    Tabla tablaHash;
+
+    public Hash(int a[]) {
+        tablaHash = new Tabla(a);
     }
-    
-    public int hashBuscar(){
-    int s=0;
-    for(int i = 0; i < a.length;i++){
-        if (a[i] == buscar){
-            s = a[i];
-        }
-        
+
+    public int hashBuscar(int valor) {
+        return tablaHash.buscar(valor);
     }
-    return s%n;
-}
-    
+
 }
