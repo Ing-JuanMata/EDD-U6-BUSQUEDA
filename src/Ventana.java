@@ -168,13 +168,13 @@ public class Ventana extends javax.swing.JFrame {
 
     private void btnSecuencialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSecuencialActionPerformed
         secuencial = new BusquedaSecuencial(arreglo);
-        int res = secuencial.busqueda(Integer.parseInt(txtDato.getText().trim()));
+        int res = secuencial.busquedaArreglo(Integer.parseInt(txtDato.getText().trim()));
         if (res == -1) {
             javax.swing.JOptionPane.showMessageDialog(this, "VALOR NO ENCONTRADO");
             return;
         }
         
-        JOptionPane.showMessageDialog(this, "VALOR ENCONTRADO EN LA POSICION " + res);
+        JOptionPane.showMessageDialog(this, "VALOR ENCONTRADO EN LA POSICION " + (res+1));
     }//GEN-LAST:event_btnSecuencialActionPerformed
 
 
