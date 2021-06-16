@@ -61,17 +61,23 @@ public class Ventana extends javax.swing.JFrame {
         txtMin = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         txtMax = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Raavi", 1, 18)); // NOI18N
         jLabel1.setText("METODOS DE BUSQUEDA");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 0, -1, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 0, -1, -1));
 
         jLabel2.setText("Dato a buscar:");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, -1, -1));
-        getContentPane().add(txtDato, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 210, 60, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 210, -1, -1));
+        getContentPane().add(txtDato, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 210, 60, -1));
 
         btnBinaria.setText("Binaria");
         btnBinaria.addActionListener(new java.awt.event.ActionListener() {
@@ -79,7 +85,7 @@ public class Ventana extends javax.swing.JFrame {
                 btnBinariaActionPerformed(evt);
             }
         });
-        getContentPane().add(btnBinaria, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 260, -1, -1));
+        getContentPane().add(btnBinaria, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 260, -1, -1));
 
         btnSecuencial.setText("Secuencial");
         btnSecuencial.addActionListener(new java.awt.event.ActionListener() {
@@ -87,7 +93,7 @@ public class Ventana extends javax.swing.JFrame {
                 btnSecuencialActionPerformed(evt);
             }
         });
-        getContentPane().add(btnSecuencial, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 260, -1, -1));
+        getContentPane().add(btnSecuencial, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 260, -1, -1));
 
         btnHash.setText("Hash");
         btnHash.addActionListener(new java.awt.event.ActionListener() {
@@ -95,19 +101,19 @@ public class Ventana extends javax.swing.JFrame {
                 btnHashActionPerformed(evt);
             }
         });
-        getContentPane().add(btnHash, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 260, -1, -1));
+        getContentPane().add(btnHash, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 260, -1, -1));
 
         jLabel3.setText("Tipos de busqueda:");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 240, -1, -1));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 240, -1, -1));
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
         jScrollPane1.setViewportView(jTextArea1);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 380, 100));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 60, 380, 100));
 
         jLabel4.setText("Valores existentes:");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 40, -1, -1));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 40, -1, -1));
 
         btnGenerar.setText("Generar numeros");
         btnGenerar.addActionListener(new java.awt.event.ActionListener() {
@@ -115,15 +121,33 @@ public class Ventana extends javax.swing.JFrame {
                 btnGenerarActionPerformed(evt);
             }
         });
-        getContentPane().add(btnGenerar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, -1, -1));
+        getContentPane().add(btnGenerar, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 170, -1, -1));
 
         jLabel5.setText("Minimo");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 210, -1, -1));
-        getContentPane().add(txtMin, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 210, 130, -1));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 210, -1, -1));
+        getContentPane().add(txtMin, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 210, 130, -1));
 
         jLabel6.setText("Maximo");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 170, -1, -1));
-        getContentPane().add(txtMax, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 170, 130, -1));
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 170, -1, -1));
+        getContentPane().add(txtMax, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 170, 130, -1));
+
+        jLabel7.setText("Juan Jesús Mata Solís");
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
+
+        jLabel8.setText("José Calvario Ramírez");
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 20, -1, -1));
+
+        jLabel9.setText("César Alejandro Inzunsa Díaz ");
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, -1, -1));
+
+        jLabel10.setText("Osmar Aldahir Guerra Castillo");
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 240, -1, 30));
+
+        jLabel11.setText("#noNosRepruebesBenigno");
+        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 290, -1, -1));
+
+        jLabel12.setText("#nosGustaElSorbeteDeLimon");
+        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 310, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -174,7 +198,7 @@ public class Ventana extends javax.swing.JFrame {
             return;
         }
         
-        JOptionPane.showMessageDialog(this, "VALOR ENCONTRADO EN LA POSICION " + (res+1));
+        JOptionPane.showMessageDialog(this, "VALOR ENCONTRADO EN LA POSICION " + (res));
     }//GEN-LAST:event_btnSecuencialActionPerformed
 
 
@@ -237,11 +261,17 @@ public class Ventana extends javax.swing.JFrame {
     private javax.swing.JButton btnHash;
     private javax.swing.JButton btnSecuencial;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextField txtDato;
