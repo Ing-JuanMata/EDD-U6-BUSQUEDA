@@ -38,7 +38,7 @@ public class BusquedaSecuencial {
     public int busquedaArreglo(int dato){
         long cantidad = arreglo.length;
         
-        for (int i = 0; i <= cantidad; i++) {
+        for (int i = 0; i < cantidad; i++) {
             if (arreglo[i] == dato) {
                 return i;
             }
