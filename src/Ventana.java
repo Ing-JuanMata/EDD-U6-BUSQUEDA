@@ -132,7 +132,7 @@ public class Ventana extends javax.swing.JFrame {
         getContentPane().add(txtMax, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 170, 130, -1));
 
         txtSecuencial.setEditable(false);
-        getContentPane().add(txtSecuencial, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 70, 130, -1));
+        getContentPane().add(txtSecuencial, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 70, 190, -1));
 
         jLabel8.setText("Secuencial");
         getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 70, -1, 20));
@@ -141,13 +141,13 @@ public class Ventana extends javax.swing.JFrame {
         getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 40, -1, 20));
 
         txtBinaria.setEditable(false);
-        getContentPane().add(txtBinaria, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 40, 130, -1));
+        getContentPane().add(txtBinaria, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 40, 190, -1));
 
         jLabel10.setText("Hash");
         getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 100, -1, 20));
 
         txtHash.setEditable(false);
-        getContentPane().add(txtHash, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 100, 130, -1));
+        getContentPane().add(txtHash, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 100, 190, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
