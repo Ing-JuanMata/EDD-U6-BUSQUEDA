@@ -201,7 +201,7 @@ public class Ventana extends javax.swing.JFrame {
             return;
         }
         txtSecuencial.setText(total + " MILISEGUNDOS");
-        JOptionPane.showMessageDialog(this, "VALOR ENCONTRADO EN LA POSICION " + res);
+        JOptionPane.showMessageDialog(this, "VALOR ENCONTRADO EN LA POSICION " + (res+1));
         
     }//GEN-LAST:event_btnSecuencialActionPerformed
 
