@@ -18,6 +18,7 @@ public class Ventana extends javax.swing.JFrame {
 
     int n;
     Hash objHash;
+    int datos[];
     int arreglo[];
     busqueda_binaria.BusquedaBinaria binaria;
     busqueda_secuencia.BusquedaSecuencial secuencial;
@@ -130,6 +131,8 @@ public class Ventana extends javax.swing.JFrame {
         jLabel6.setText("Maximo");
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 170, -1, -1));
         getContentPane().add(txtMax, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 170, 130, -1));
+
+        txtSecuencial.setEditable(false);
         getContentPane().add(txtSecuencial, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 70, 130, -1));
 
         jLabel8.setText("Secuencial");
@@ -137,10 +140,14 @@ public class Ventana extends javax.swing.JFrame {
 
         jLabel9.setText("Binaria");
         getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 40, -1, 20));
+
+        txtBinaria.setEditable(false);
         getContentPane().add(txtBinaria, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 40, 130, -1));
 
         jLabel10.setText("Hash");
         getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 100, -1, 20));
+
+        txtHash.setEditable(false);
         getContentPane().add(txtHash, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 100, 130, -1));
 
         pack();
@@ -148,7 +155,7 @@ public class Ventana extends javax.swing.JFrame {
 
 
     private void btnGenerarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarActionPerformed
-        arreglo = new int[n];
+        datos = new int[n];
         String auxS = "";
         int min = Integer.parseInt(txtMin.getText().trim());
         int max = Integer.parseInt(txtMax.getText().trim());
@@ -157,11 +164,11 @@ public class Ventana extends javax.swing.JFrame {
             return;
         }
         for (int i = 0; i < n; i++) {
-            arreglo[i] = (int) (Math.random() * (max - min) + min);
+            datos[i] = (int) (Math.random() * (max - min) + min);
         }
 
-        arreglo = new MetodosInternos(arreglo).Quicksort();
-        for (int i : arreglo) {
+        datos = new MetodosInternos(datos).Quicksort();
+        for (int i : datos) {
             auxS += String.valueOf(i) + ",";
         }
         auxS = auxS.substring(0, auxS.length() - 1);
@@ -169,8 +176,11 @@ public class Ventana extends javax.swing.JFrame {
         btnSecuencial.setEnabled(true);
         btnHash.setEnabled(true);
         jTextArea1.setText(auxS);
-
-
+        MetodosInternos objeto = new MetodosInternos(datos);
+        objeto.Quicksort();
+        
+        arreglo = objeto.A;
+            
     }//GEN-LAST:event_btnGenerarActionPerformed
 
     private void btnBinariaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBinariaActionPerformed

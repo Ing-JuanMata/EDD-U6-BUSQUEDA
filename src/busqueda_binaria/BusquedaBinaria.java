@@ -24,7 +24,6 @@ public class BusquedaBinaria {
      * @return indice del arreglo donde se encuentra el valor
      */
     public int busqueda(int valor) {
-        datos = new MetodosInternos(datos).Quicksort();
         return busqueda(datos, 0, datos.length - 1, valor);
     }
 
